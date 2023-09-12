@@ -1,0 +1,59 @@
+-- Sql Challenge
+
+-- Drop existing tables before creating new tables
+-- Drop Table if exists departments cascade;
+-- Drop Table if exists dept_emp cascade;
+-- Drop Table if exists dept_manager cascade;
+-- Drop Table if exists employees cascade;
+-- Drop Table if exists salaries cascade;
+-- Drop Table if exists titles cascade;
+
+-- Create Tables
+-- Create Table departments (
+-- 	dept_no varchar(15) Primary Key,
+-- 	dept_name varchar(25)
+-- );
+
+-- Create Table titles (
+-- 	title_id varchar(15) Primary Key,
+-- 	title varchar(25)
+-- );
+
+-- Create Table employees (
+-- 	emp_no int Primary Key,
+-- 	emp_title_id varchar(10),
+-- 	birth_date date,
+-- 	first_name varchar(30),
+-- 	last_name varchar(30),
+-- 	sex varchar(10),
+-- 	hire_date date,
+-- 	Foreign Key(emp_title_id) references titles(title_id)
+-- );
+
+-- Create Table dept_emp (
+-- 	emp_no int,
+-- 	dept_no varchar(10),
+-- 	Primary Key(emp_no, dept_no),
+-- 	Foreign Key(emp_no) references employees(emp_no),
+-- 	Foreign Key(dept_no) references departments(dept_no)
+-- );
+	
+-- Create Table dept_manager(
+-- 	dept_no varchar(10),
+-- 	emp_no int Primary Key,
+-- 	Foreign Key(emp_no) references employees(emp_no),
+-- 	Foreign Key(dept_no) references departments(dept_no)
+-- );
+
+-- Create Table salaries(
+-- 	emp_no int Primary Key,
+-- 	salary money,
+-- 	Foreign Key(emp_no) references employees(emp_no)
+-- );
+
+-- Select * from departments
+-- Select * from titles
+-- Select * from employees
+-- Select * from dept_emp
+-- Select * from dept_managers
+-- Select * from salaries
